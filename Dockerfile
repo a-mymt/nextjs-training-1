@@ -13,6 +13,8 @@ ENV AWS_SECRET_ACCESS_KEY ${AWS_SECRET_ACCESS_KEY}
 ENV N_PREFIX ${HOME}/.n
 ENV PATH ${N_PREFIX}/bin:$PATH
 
+EXPOSE 3000/tcp
+
 # install package
 RUN apt update && apt upgrade -y
 RUN apt install -y git python3 python3-pip golang-go vim zip less curl unzip sudo nodejs npm
