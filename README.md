@@ -2,6 +2,30 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+### Docker setup
+
+- docker build
+
+``` bash
+docker build -t golang-training \
+  --build-arg GITHUB_USER_NAME=user.name \
+  --build-arg GITHUB_USER_EMAIL=user.email \
+  --build-arg GITHUB_USER_TOKEN=user.password \
+  --build-arg AWS_ACCESS_KEY_ID=user_access_key \
+  --build-arg AWS_SECRET_ACCESS_KEY=user_secret_key \
+  --no-cache .
+```
+
+- docker run
+
+``` bash
+docker run -itd --privileged --rm \
+  -p 3000:3000 \
+  --name nextjs-training \
+  --hostname nextjs-training \
+  nextjs-training
+```
+
 First, run the development server:
 
 ```bash
