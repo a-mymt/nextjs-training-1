@@ -23,7 +23,7 @@ RUN apt autoremove -y &&\
     rm -rf /usr/local/src/*
 
 # install nodejs & use nodejs@latest
-RUN npm install -g n
+RUN npm install -g n next
 RUN n stable && n latest
 
 # install aws cli
@@ -42,3 +42,7 @@ RUN git clone https://${GITHUB_USER_NAME}:${GITHUB_USER_TOKEN}@github.com/a-mymt
 /golang-training-1.git
 RUN git clone https://${GITHUB_USER_NAME}:${GITHUB_USER_TOKEN}@github.com/a-mymt
 /nextjs-training-1.git
+
+# install module nextjs-training
+WORKDIR nextjs-training-1
+RUN npm install
